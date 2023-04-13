@@ -1,0 +1,32 @@
+<header class="main-header">
+    <div div class="container-menu">
+    <nav class="main-header__menu ul">
+      <ul>
+        <li><a routerLink="/produtos"> Voltar</a></li>
+        <!--link com a pagina -->
+        <li>      
+  </ul>
+    </nav>
+  
+    <!--apos a criacao do componet barra de pesquisa, cola aqui a pagina-->
+    <!--  A BARRA DE PESQUISA ERA AQUI, MAS CRIAMOS OUTRO COMPONENTE PARA A BARRAS DE PESQUISA, POIS QUANDO EU ESTAVA NA PAGINA CONTATO, E DIGITAVA MOUSE NA PESQUISA ELE NAO DIRECIONAVA PAR A PAGINA DE PRODUTOS
+  <form class="search-form">         esse search-form já faz um get, na url já aparece o parametro de pesquisa, son com esse nome descicao
+    <input type="text" name="descricao">
+    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>    esse submit manda um get
+  </form>
+  
+  copia isso e mais os estilo css e cole no novo componente
+  -->
+  </div>
+  </header><!-- esse produto é a variavel que recebe produtos-->
+    <section class="product-list">                            <!-- esse produtos criamos essa variavel na classe que recebeu a lista-->
+      <div class="product-list__card" *ngFor="let luzes of luzes">  <!-- esse ngFor renderiza a lista de produtos-->
+           <!-- vai rotear, fazer link com nome produto/id (nesse caso é rotemento com paramentro, após colocar aqui (tem que criar um componet do click, e um componente do 404!pagina nao encontrada)-->
+        <a class="product-list__link"> 
+           <img [src]="luzes.imagem" >       <!-- tem que colocar dentro de colchete quando tiver recebendo uma lista-->  <!-- antes deixei em branco src=";"-->
+        </a>
+        
+      </div>
+    </section>
+  
+

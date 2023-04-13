@@ -1,0 +1,114 @@
+.main-header {
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+   
+   
+  }
+
+  .logotipo{
+  display: flex;
+  flex-flow: row wrap;
+  height: 12rem;
+  width: 100rem;
+  
+
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    flex: 1;
+    height: 14rem;
+    width: 10rem;
+    align-content: center;
+    
+  
+    
+    
+  }
+  
+  .main-header__title {
+    font-size: 80px;
+    letter-spacing: px;
+  }
+  
+  .main-header__title--blue {
+    color: var(--blue);
+    color: blue;
+    font-size:60px;
+  }
+  
+  .main-header__title--orange {
+    color: var(--orange);
+    color: orange;
+    font-size:60px;
+  }
+  
+  .main-header__menu ul {
+    display: flex;
+    justify-content: flex-end;
+  
+  }
+  
+  .main-header__menu a {
+    padding: 8.8px 10px 10px 10px;
+    margin-right: 4px;
+    color: white ;
+    background-color: #2c2c2c;
+    font-size: bold;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+  }
+  
+  .main-header__menu a:hover {
+    background-color: #6d6d6d;
+    color: #fff;
+  }
+  
+  .container-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    flex: 1;
+  }
+  
+  .badge-carrinho {
+    background-color: var(--dark-blue);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .search-form{
+    height: 44px;
+    display: flex;
+  }
+  
+  .search-form input{
+    box-sizing: border-box;
+    height: 56px;
+    padding: 28px;
+    flex:1;
+    background-color: var(--light-gray);
+    color: var(--gray);
+    border: none;
+    transition: all -3s ease-in-out;
+    font-size: 22px;
+  }
+  
+  .search-form button{
+    width: 56px;
+    height: 56px;
+    background-color: black;
+    border:none;
+    color: #fff;
+    font-size: 22px;
+  }
+  

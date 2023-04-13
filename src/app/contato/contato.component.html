@@ -1,0 +1,153 @@
+
+
+<header class="main-header">
+    <div div class="container-menu">
+    <nav class="main-header__menu ul">
+      <ul>
+        <li><a routerLink="/produtos"> Voltar</a></li>
+        <!--link com a pagina -->
+        <li>      
+  </ul>
+    </nav>
+  
+    <!--apos a criacao do componet barra de pesquisa, cola aqui a pagina-->
+    <!--  A BARRA DE PESQUISA ERA AQUI, MAS CRIAMOS OUTRO COMPONENTE PARA A BARRAS DE PESQUISA, POIS QUANDO EU ESTAVA NA PAGINA CONTATO, E DIGITAVA MOUSE NA PESQUISA ELE NAO DIRECIONAVA PAR A PAGINA DE PRODUTOS
+  <form class="search-form">         esse search-form já faz um get, na url já aparece o parametro de pesquisa, son com esse nome descicao
+    <input type="text" name="descricao">
+    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>    esse submit manda um get
+  </form>
+  
+  copia isso e mais os estilo css e cole no novo componente
+  -->
+  </div>
+  </header>
+  <h2 class="contact__title">Entrar em contato</h2>
+  <section class="contact__container">
+    <form class="contact-form" [formGroup]="formContato"  (ngSubmit)="enviarFormulario()">
+      <!--[formGroup] esse primeiro é a tag e o segundo é a propriedade criada na classe ts-->
+  
+      <!-- validação campo nome-->
+      <input
+        type="text"
+        placeholder="digite seu nome"
+  
+        formControlName="nome" [(ngModel)]="envio.nome"
+        [class.valid]="formContato.controls['nome'].valid"
+        [class.invalid]="
+          formContato.controls['nome'].invalid &&
+          (formContato.controls['nome'].touched ||
+            formContato.controls['nome'].dirty)"
+      >
+                          <!--validação do if nao atingiu o minimo de preenchimento-->
+      <div *ngIf="formContato.controls['nome'].invalid && (formContato.controls['nome'].touched || formContato.controls['nome'].dirty)">
+        <small class="error-message" *ngIf="formContato.controls['nome'].hasError('minlength')">
+          Esse campo precisa de no minimo 4 caracteres.
+        </small>
+        <small class="error-message" *ngIf="formContato.controls['nome'].hasError('required')">
+           Esse campo precisa ser preenchido.
+        </small>
+      </div>
+  
+      <!-- validação campo assunto-->
+      <input
+      type="assunto"
+      placeholder="digite o assunto"
+      formControlName="assunto" [(ngModel)]="envio.assunto"
+        [class.valid]="formContato.controls['assunto'].valid"
+        [class.invalid]="
+          formContato.controls['assunto'].invalid &&
+          (formContato.controls['assunto'].touched ||
+            formContato.controls['assunto'].dirty)"
+       >
+  
+      <div *ngIf="formContato.controls['assunto'].invalid && (formContato.controls['assunto'].touched || formContato.controls['assunto'].dirty)">
+        <small class="error-message" *ngIf="formContato.controls['assunto'].hasError('minlength')">
+          Esse campo precisa de no minimo 10 caracteres.
+        </small>
+        <small class="error-message" *ngIf="formContato.controls['assunto'].hasError('required')">
+           Esse campo precisa ser preenchido.
+        </small>
+      </div>
+  
+      <!-- validação campo telefone-->
+      <input
+      type="telefone"
+      placeholder="(00) 0 0000-0000"
+  
+      formControlName="telefone" [(ngModel)]="envio.telefone"
+        [class.valid]="formContato.controls['telefone'].valid"
+        [class.invalid]="
+          formContato.controls['telefone'].invalid &&
+          (formContato.controls['telefone'].touched ||
+            formContato.controls['telefone'].dirty)"
+  
+      >
+      <div *ngIf="formContato.controls['telefone'].invalid && (formContato.controls['telefone'].touched || formContato.controls['telefone'].dirty)">
+        <small class="error-message" *ngIf="formContato.controls['telefone'].hasError('minlength')">
+          Esse campo precisa de no minimo 11 digitos.
+        </small>
+        <small class="error-message" *ngIf="formContato.controls['telefone'].hasError('required')">
+           Esse campo precisa ser preenchido.
+        </small>
+      </div>
+  
+      <!-- validação campo email-->
+      <input
+      type="email"
+      placeholder="digite seu email"
+      formControlName="email" [(ngModel)]="envio.email"
+        [class.valid]="formContato.controls['email'].valid"
+        [class.invalid]="
+          formContato.controls['email'].invalid &&
+          (formContato.controls['email'].touched ||
+            formContato.controls['email'].dirty)"
+        >
+  
+      <div *ngIf="formContato.controls['email'].invalid && (formContato.controls['email'].touched || formContato.controls['email'].dirty)">
+        <small class="error-message" *ngIf="formContato.controls['email'].hasError('email')">  <!--aqui é diferente-->
+          Esse campo precisa ser um email valido.
+        </small>
+        <small class="error-message" *ngIf="formContato.controls['email'].hasError('required')">
+           Esse campo precisa ser preenchido.
+        </small>
+      </div>
+  
+      <!-- validação campo area-->
+    <textarea
+      maxlength="300"
+      placeholder="digite sua mensagem..."
+      rows="4"
+      formControlName="mensagem" [(ngModel)]="envio.mensagem"
+        [class.valid]="formContato.controls['mensagem'].valid"
+        [class.invalid]="
+          formContato.controls['mensagem'].invalid &&
+          (formContato.controls['mensagem'].touched ||
+            formContato.controls['mensagem'].dirty)"
+     >
+    </textarea>
+  
+    <div *ngIf="formContato.controls['mensagem'].invalid && (formContato.controls['mensagem'].touched || formContato.controls['mensagem'].dirty)">
+      <small class="error-message" *ngIf="formContato.controls['mensagem'].hasError('minlength')">
+        Esse campo precisa ser preenchido.
+      </small>
+      <small class="error-message" *ngIf="formContato.controls['mensagem'].hasError('required')">
+         Esse campo precisa ser preenchido.
+      </small>
+    </div>
+             <!-- [disabled] tem que ser esse entre colchetes-->
+      <button [disabled]="formContato.invalid" type="submit"> Enviar </button>   <!-- esse botao vai esta desabilitado se tiver algum campo invalido no formulario-->
+    </form>                                        <!-- usei lá encima o enviarformulario que lincou com esse submit-->
+    <address>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.206183040898!2d-49.921779385904124!3d-16.816124488423295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e23a424ef4c89%3A0xf11f4acca7e52fbf!2sBarbearia%20Do%20Netto!5e0!3m2!1spt-BR!2sbr!4v1681151053517!5m2!1spt-BR!2sbr"
+        width="500"
+        height="200"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <p>Rua Tolendal Bittencourt, qd 16, lt 2a,
+        Major Sinfronio.
+       </p>
+    </address>
+  </section>

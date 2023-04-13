@@ -1,0 +1,113 @@
+
+.main-header {
+    padding: 10px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+    margin-top: 0.2rem;
+}
+
+.container-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    flex: 0.985;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+
+  }
+
+  .main-header__menu ul {
+    display: flex;
+    justify-content: flex-end;
+  
+  }
+  .main-header__menu a {
+    padding: 8.8px 8px 8px 8px;
+  background-color: #2c2c2c;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.main-header__menu a:hover {
+    background-color: #6d6d6d;
+    color: #FFF;
+  }
+
+
+
+  .product-list {
+    padding: 20px 0;
+    width: fit-content;
+    display: flex;
+    gap: 50px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.product-list__card {
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 4px;
+    flex: 0 1 270px;
+    height: 320px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product-list__card:hover {
+    outline: 1px solid #6d6d6d;
+    transform: scale(1.1, 1.1);
+    cursor: pointer;
+}
+
+.product-list__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    text-decoration: none;
+}
+
+.product-list__card img {
+    height: 250px;
+    width: 250px;
+    display: block;
+    border-radius: 4px;
+}
+
+.product-item__name {
+    font-size: 24px;
+    color: var(--blue);
+    
+}
+.product-item__price {
+    color: var(--orange);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.product-item__price-description {
+    color: var(--gray);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-item__buy-button {
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 12px;
+}
+
+.product-item__buy-button:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}

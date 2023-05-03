@@ -13,6 +13,7 @@ import { PigmentacaoComponent } from './pigmentacao/pigmentacao.component';
 import { PlatinadoComponent } from './platinado/platinado.component';
 import { ProgressivaComponent } from './progressiva/progressiva.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +25,10 @@ import { ProgressivaComponent } from './progressiva/progressiva.component';
     PigmentacaoComponent,
     PlatinadoComponent,
     ProgressivaComponent,
-    FreeStyleComponent
+    FreeStyleComponent,
 
-    
+
+
   ],
   imports: [
     BrowserModule,

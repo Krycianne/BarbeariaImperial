@@ -23,7 +23,7 @@
       <div class="product-list__card" *ngFor="let corte of corte">  <!-- esse ngFor renderiza a lista de produtos-->
            <!-- vai rotear, fazer link com nome produto/id (nesse caso é rotemento com paramentro, após colocar aqui (tem que criar um componet do click, e um componente do 404!pagina nao encontrada)-->
         <a class="product-list__link"> 
-           <img [src]="corte.imagem" >       <!-- tem que colocar dentro de colchete quando tiver recebendo uma lista-->  <!-- antes deixei em branco src=";"-->
+           <img [src] = "corte.imagem">       <!-- tem que colocar dentro de colchete quando tiver recebendo uma lista-->  <!-- antes deixei em branco src=";"-->
            <h2 class="product-item__name">{{corte.descricao}}</h2>
       </a>
         
